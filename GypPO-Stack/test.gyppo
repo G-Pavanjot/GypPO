@@ -1,0 +1,216 @@
+grid 20 20
+elements
+	weapon
+		name "mel"
+		damage 30
+		colour green
+		shape square
+		melee
+		atkrange 20
+		rof 3
+		target characters
+	weapon
+		name "str"
+		damage 20
+		colour green
+		shape square
+		ranged
+			speed medium
+			bulletpattern straight
+		atkrange 100
+		rof 1
+		target characters
+	weapon
+		name "hom"
+		damage 20
+		colour green
+		shape square
+		ranged
+			speed slow
+			bulletpattern homing
+		atkrange 60
+		rof 2
+		target characters
+	weapon
+		name "arc"
+		damage 20
+		colour white
+		shape square
+		ranged
+			speed slow
+			bulletpattern arc
+		atkrange 100
+		rof 1
+		target all
+	weapon
+		name "vatk"
+		damage 30
+		colour white
+		shape square
+		ranged
+			speed vslow
+			bulletpattern vatk
+		atkrange 100
+		rof 3
+		target all
+	antag
+		name "facingTurret"
+		health 18
+		weaponname "str"
+		flying no
+		movement
+			pattern still
+			track yes
+			vee no
+			speed rest
+		colour blue
+		size m
+		shape square
+		score 100
+	antag
+		name "archer"
+		health 20
+		weaponname "arc"
+		flying no
+		movement
+			pattern patrol
+			track no
+			vee no
+			speed vslow
+		colour gray
+		size m
+		shape rectangle
+		score 100
+	antag
+		name "antag1"
+		health 20
+		weaponname "mel"
+		flying no
+		movement
+			pattern patrol
+			track no
+			vee no
+			speed vslow
+		colour blue
+		size m
+		shape square
+		score 100
+	antag
+		name "antag2"
+		health 40
+		weaponname "str"
+		flying no
+		movement
+			pattern still
+			track no
+			vee no
+			speed rest
+		colour blue
+		size l
+		shape rectangle
+		score 200
+	upgrades
+		collectible "coin" 50 violet
+		collectible "bigcoin" 100 orange
+		health "hlth" 50 red
+		life "lifeup" 1 yellow
+		weapon "newW" "arc" blue
+logic
+	level
+		camera free-scroll 4 4
+		platforms
+			0 15 l gold
+			3 15 m gold
+			4 16 l gold
+			7 16 l gold
+			9 15 s gold
+			10 14 m gold
+			8 13 m gold
+			6 14 m gold
+		antags
+			"archer" 5 16
+			patrol
+				start 4 16
+				end 8 16
+			"archer" 10 14
+			patrol
+				start 10 14
+				end 12 14
+			"facingTurret" 9 15
+		lvlUpgrades
+			"hlth" 6 14
+		protag
+			spawn 0 15
+			jump 1
+			speed slow
+			lives 3
+			health 100
+			colour red
+			shape rectangle
+			weaponname "str"
+		score 300
+	level
+		camera fixed
+		platforms
+			0 1 m green
+			1 2 l green
+			5 1 m green
+			4 2 m green
+		antags
+			"antag1" 1 0
+			patrol
+				start 0 0
+				end 2 0
+			"antag2" 5 2
+		lvlUpgrades
+			"coin" 0 1
+			"bigcoin" 5 1
+			"hlth" 1 2
+		protag
+			spawn 0 0
+			jump 1
+			speed slow
+			lives 3
+			health 100
+			colour red
+			shape rectangle
+			weaponname "mel"
+		eol 6 1
+	level
+		camera one-way 5 5
+		platforms
+			0 19 l green
+			2 18 l green
+			5 18 s green
+			6 17 s green
+			4 17 s green
+			7 16 s green
+			8 15 m green
+			9 14 s green
+			10 13 m green
+			12 14 l green
+			14 13 m green
+			15 12 l green
+			18 11 m green
+		antags
+			"antag1" 11 13
+			patrol
+				start 10 13
+				end 11 13
+			"antag2" 16 12
+		lvlUpgrades
+			"coin" 5 18
+			"coin" 9 15
+			"coin" 9 14
+			"newW" 1 18
+			"lifeup" 12 13
+		protag
+			spawn 0 18
+			jump 1
+			speed slow
+			lives 3
+			health 100
+			colour red
+			shape rectangle
+			weaponname "vatk"
+		eol 19 11

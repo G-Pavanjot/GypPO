@@ -1,0 +1,42 @@
+cabal-version: 1.12
+
+-- This file was originally generated from package.yaml by hpack version 0.31.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 7a0f0985426cefc7a119118123aad19cc260ca243447fa6d062be8aead220733
+
+name:           GypPO-stack
+version:        0.1.0.0
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+library
+  exposed-modules:
+      AST.Design
+      AST.JS
+      Parser.Elements
+      Parser.Logic
+      Parser.Game
+      Parser.Helper
+      Parser.Language
+      Plat_Pretty
+      Translation_Helpers
+      Gen
+  other-modules:
+      Paths_GypPO_stack
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+      , colour
+      , wl-pprint
+      , process
+      , parsec
+      , semigroups >= 0.14
+  GHC-Options:    -Wall
+  default-language: Haskell2010
